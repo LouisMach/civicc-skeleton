@@ -33,9 +33,11 @@ int yycolumn = 1;
 %option noyywrap
 %option nounput
 %option yylineno
+%option debug
 
 
 %%
+"//".*$                    {}
 
 "("                        { FILTER( BRACKET_L); }
 ")"                        { FILTER( BRACKET_R); }
