@@ -23,7 +23,7 @@ void AddLocToNode(node_st *node, void *begin_loc, void *end_loc);
  char               *id;
  int                 cint;
  float               cflt;
- enum binop_type     cbinop; 
+ enum BinOpEnum     cbinop; 
  node_st             *node;
 }
 
@@ -40,6 +40,8 @@ void AddLocToNode(node_st *node, void *begin_loc, void *end_loc);
 %type <node> intval floatval boolval constant expr
 %type <node> stmts stmt assign varlet program
 %type <cbinop> binop
+
+%token<fval> T_FLOATVAL "float value"
 
 %start program
 
